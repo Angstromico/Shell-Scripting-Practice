@@ -1,0 +1,2 @@
+John Doe:100:john@example.com
+Maria Perez:250:maria@example.com
