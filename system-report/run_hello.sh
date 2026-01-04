@@ -1,12 +1,14 @@
 #!/bin/bash
 
-# Try to compile hello.c
-gcc hello.c -o hello 2> error.log
+SCRIPT_DIR="$(dirname "$0")"
 
-# Check if compilation succeeded
+# Compile hello.c into SCRIPT_DIR
+gcc "$SCRIPT_DIR/hello.c" -o "$SCRIPT_DIR/hello" 2> "$SCRIPT_DIR/error.log"
+
 if [ $? -eq 0 ]; then
     echo "Compilation successful, running program..."
-    ./hello
+    "$SCRIPT_DIR/hello"
 else
     echo "Compilation failed. See error.log for details."
 fi
+
